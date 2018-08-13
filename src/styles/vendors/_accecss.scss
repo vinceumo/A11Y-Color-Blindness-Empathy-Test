@@ -1,0 +1,23 @@
+// Customize version of AcceCSS https://lukyvj.github.io/accecss/
+
+$path-to-accecss-filter: '/assets';
+$type-map: (
+  1: 'protanopia' ,
+  2: 'protanomaly' ,
+  3: 'deuteranopia' ,
+  4: 'deuteranomaly' ,
+  5: 'tritanopia' ,
+  6: 'tritanomaly' ,
+  7: 'achromatopsia' ,
+  8: 'achromatomaly' 
+);
+
+@each $num, $type in $type-map {
+  &.colorblind#{$num}{
+   filter: url('#{$path-to-accecss-filter}/accecss-filters.svg##{$type}') grayscale(0) !important;
+ }
+}
+
+.grayscale{
+  filter: grayscale(100%);
+}
