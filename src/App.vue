@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Search/>
+    <div class="colorblind8">
+      <TestOutput/>
+    </div>
   </div>
 </template>
 
 <script>
-import Search from './components/Search.vue'
+import TestOutput from './components/TestOutput.vue'
 
 export default {
   name: 'app',
   components: {
-    Search
+    TestOutput
   }
 }
 </script>
