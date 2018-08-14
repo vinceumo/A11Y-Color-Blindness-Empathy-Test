@@ -1,20 +1,18 @@
 <template>
   <div>
-    <p>Hello</p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum optio adipisci at autem voluptas. Eius ratione delectus, minima illum error, quae recusandae aspernatur voluptatibus animi dolorem quo est sint suscipit?
-    </p>
+    <iframe src="http://mcarthurglen.com/" frameborder="0"></iframe>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Search'
-}
+  export default {
+    name: 'Search'
+  }
 </script>
 
 <style lang="scss" scoped>
-* {
-  color: red;
-}
+  iframe {
+    height: 100vh;
+    width: 100vw;
+  }
 </style>
