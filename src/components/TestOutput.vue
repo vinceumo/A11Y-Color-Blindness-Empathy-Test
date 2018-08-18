@@ -1,12 +1,15 @@
 <template>
   <div class="test-output">
-    <iframe src="https://www.cosmos.co.uk/" frameborder="0"></iframe>
+    <iframe v-bind:src="pageToTest" frameborder="0"></iframe>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'TestOutput'
+    name: 'TestOutput',
+    props: {
+      pageToTest: String,
+    }
   }
 </script>
 
