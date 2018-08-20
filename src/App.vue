@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="colorblind8">
-      <TestOutput v-if="showTestOutout" v-bind:pageToTest="pageToTestUrl"/>
+      <TestOutput v-if="showTestOutput" v-bind:pageToTest="pageToTestUrl"/>
     </div>
     <div>
       <input type="url" name="pageUrl" id="pageUrl" v-model="pageToTestUrl">
-      <button v-if="pageToTestUrl" v-on:click="showTestOutout = true">Start tests</button>
+      <button v-if="pageToTestUrl" v-on:click="showTestOutput = true">Start tests</button>
     </div>
   </div>
 </template>
@@ -20,8 +20,8 @@ export default {
   },
   data: function () {
     return {
-      pageToTestUrl: "",
-      showTestOutout: false
+      pageToTestUrl: "https://www.cosmos.co.uk/",
+      showTestOutput: true
     }
   }
 }
