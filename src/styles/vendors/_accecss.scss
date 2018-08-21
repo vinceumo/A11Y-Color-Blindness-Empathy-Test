@@ -13,7 +13,7 @@ $type-map: (
 );
 
 @each $num, $type in $type-map {
-  &.colorblind#{$num}{
+  &.#{$type}{
    filter: url('#{$path-to-accecss-filter}/accecss-filters.svg##{$type}') grayscale(0) !important;
  }
 }
