@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div>
-      <Checklist v-for="(item, index) in tests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, status: item.status}"/>
+      <TestPicker v-for="(item, index) in tests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, status: item.status}" v-on:change="getTestPickerValue"/>
     </div>
-    
+    {{ currentTest }}
     <div v-bind:class="currentTest">
       <TestOutput v-if="showTestOutput" v-bind:pageToTest="pageToTestUrl"/>
     </div>
@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import Checklist from './components/Checklist.vue'
+import TestPicker from './components/TestPicker.vue'
 import TestOutput from './components/TestOutput.vue'
 
 export default {
   name: 'app',
   components: {
-    Checklist,
+    TestPicker,
     TestOutput
   },
   data: function () {
@@ -41,6 +41,11 @@ export default {
         {name: "grayscale", status: null} 
       ]
     }
+  },
+  methods: {
+    getTestPickerValue(value) {
+      this.currentTest = value;
+    },
   }
 }
 </script>
