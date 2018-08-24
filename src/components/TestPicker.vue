@@ -16,3 +16,9 @@
     },
   }
 </script>
+
+<style lang="scss" scoped>
+  label {
+    text-transform: capitalize;
+  }
+</style>
