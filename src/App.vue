@@ -3,33 +3,32 @@
   <div class="container">
     <h1>A11Y <br>
     Color blindness empathy test</h1>
-    <div>
-      <label for="pageUrl">Website URL</label>
-      <input type="url" name="pageUrl" id="pageUrl" v-model="pageToTestUrl" placeholder="https://www.mywebsite.com">
-      <button v-if="pageToTestUrl" v-on:click="showTestOutput = true">Start tests</button>
-    </div>
-    <TestPicker v-if="showTestOutput" v-for="(item, index) in tests" v-bind:key="item.name + index" v-bind:tests="{name: item.name}" v-on:change="getTestPickerValue"/>
+    <SourcePicker v-on:emitUrlToTestEvent="getUrlToTest"/>
+    <TestPicker v-if="urlToTest" v-for="(item, index) in tests" v-bind:key="item.name + index" v-bind:tests="{name: item.name}" v-on:change="getTestPickerValue"/>
   </div>
-  <TestOutput v-if="showTestOutput" v-bind:pageToTest="pageToTestUrl" v-bind:class="currentTest"/>
+  <TestOutput v-if="urlToTest" v-bind:pageToTest="urlToTest" v-bind:class="currentTest"/>
 </div>
 </template>
 
 <script>
+import SourcePicker from './components/SourcePicker.vue'
 import TestPicker from './components/TestPicker.vue'
 import TestOutput from './components/TestOutput.vue'
 
 export default {
 name: 'app',
 components: {
+  SourcePicker,
   TestPicker,
   TestOutput
 },
 data: function () {
   return {
     currentTest: "",
-    pageToTestUrl: "",
+    urlToTest: "",
     showTestOutput: false,
     tests: [
+      {name: "none"},
       {name: "protanopia"},
       {name: "protanomaly"},
       {name: "deuteranopia"},
@@ -45,6 +44,9 @@ data: function () {
 methods: {
   getTestPickerValue(value) {
     this.currentTest = value;
+  },
+  getUrlToTest(value) {
+      this.urlToTest = value;
   },
 }
 }
