@@ -4,9 +4,17 @@
     <h1>A11Y <br>
     Color blindness empathy test</h1>
     <SourcePicker v-on:emitValuesToTestEvent="getValuesToTest"/>
-    <TestPicker v-if="showTest" v-for="(item, index) in tests" v-bind:key="item.name + index" v-bind:tests="{name: item.name}" v-on:change="getTestPickerValue"/>
+    <div v-if="showTest">
+      <TestPicker v-for="(item, index) in tests" v-bind:key="item.name + index" v-bind:tests="{name: item.name}" v-on:change="getTestPickerValue"/>
+    </div>
   </div>
   <TestOutput v-if="showTest" v-bind:outputToTest="toTest" v-bind:class="currentTest"/>
+  <footer>
+    <div class="container">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut fugit placeat assumenda magni? Exercitationem aperiam delectus minima autem, culpa neque ab cupiditate, dignissimos, adipisci accusantium quibusdam iusto eaque inventore? Veniam?</p>
+    </div>
+  </footer>
+  
 </div>
 </template>
 
@@ -45,7 +53,6 @@ export default {
       this.currentTest = value;
     },
     getValuesToTest(value) {
-      console.log(value.url);
       this.toTest = value;
     }
   },
@@ -59,3 +66,8 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+
+</style>
+
