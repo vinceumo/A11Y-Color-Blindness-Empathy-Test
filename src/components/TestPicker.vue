@@ -5,20 +5,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'TestPicker',
-    props: ['tests', 'value'],
-    methods: {
-      emitTestPickerValue(event) {
-        const value = event.target.value;
-        this.$emit('change', value);
-      },
-    },
+export default {
+  name: "TestPicker",
+  props: ["tests", "value"],
+  methods: {
+    emitTestPickerValue(event) {
+      const value = event.target.value;
+      this.$emit("change", value);
+    }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-  label {
-    text-transform: capitalize;
-  }
+label {
+  text-transform: capitalize;
+}
 </style>

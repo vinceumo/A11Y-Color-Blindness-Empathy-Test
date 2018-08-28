@@ -1,48 +1,65 @@
 <template>
   <div class="source-picker">
-    <div class="source-input-container" v-if="sourceInput == 'url'">
+    <div class="source-input-container" v-if="tempToTest.sourceInput == 'url'">
       <label for="pageUrl">Website URL</label>
-      <input type="url" name="pageUrl" id="pageUrl" v-model="tempUrlToTest" placeholder="https://www.mywebsite.com">
+      <input type="url" name="pageUrl" id="pageUrl" v-model="tempToTest.url" placeholder="https://www.mywebsite.com">
     </div>
-    <div class="source-input-container" v-if="sourceInput == 'img'">
+    <div class="source-input-container" v-if="tempToTest.sourceInput == 'img'">
       <label for="imageFile">Select an image</label>
-      <input type="file" name="imageFile" id="imageFile" accept="image/png, image/jpeg">
+      <input type="file" name="imageFile" id="imageFile" accept="image/png, image/jpeg" v-on:change="onFileChange">
     </div>
     <div>
-      <label><input name="source" id="sourceInputUrl" type="radio" value="url" v-model="sourceInput"> URL</label>
-      <label><input name="source" id="sourceInputImg" type="radio" value="img" v-model="sourceInput"> Image</label>
+      <label><input name="source" id="sourceInputUrl" type="radio" value="url" v-model="tempToTest.sourceInput "> URL</label>
+      <label><input name="source" id="sourceInputImg" type="radio" value="img" v-model="tempToTest.sourceInput "> Image</label>
     </div>
-    <button v-if="tempUrlToTest" v-on:click="emitUrlToTest">Start tests</button>
+    <button v-if="tempToTest.url || tempToTest.image" v-on:click="emitValuesToTest">Start tests</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SourcePicker',
+  name: "SourcePicker",
   data: function() {
     return {
-      tempUrlToTest: "",
-      sourceInput: "url",
-    } 
+      tempToTest: {
+        sourceInput: "url",
+        image: "",
+        url: ""
+      }
+    };
   },
   methods: {
-    emitUrlToTest() {
-      const value = this.tempUrlToTest;
-      this.$emit('emitUrlToTestEvent', value);
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.createImage(files[0]);
     },
+    createImage(file) {
+      var reader = new FileReader();
+
+      reader.onload = e => {
+        this.tempToTest.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    emitValuesToTest() {
+      const value = this.tempToTest;
+      this.$emit("emitValuesToTestEvent", value);
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  .source-picker {
-    margin-bottom: 1rem;
+.source-picker {
+  margin-bottom: 1rem;
 
-    .source-input-container {
-      label, input {
-        display: block;
-      }
+  .source-input-container {
+    label,
+    input {
+      display: block;
     }
   }
+}
 </style>
 
