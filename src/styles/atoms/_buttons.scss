@@ -1,5 +1,23 @@
-.btn-primary {
-  background-color: $primary;
+button {
   border: 0;
-  padding: 0.5rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+
+  @each $name, $theme in $colors {
+    &.is-#{$name} {
+      background-color: color($name, base);
+      color: color($name, contrast);
+      border: 2px solid color($name, contrast);
+      transition: all 0.3s ease-in-out;
+
+      &:hover, &:focus {
+        background-color: color($name, contrast);
+        color: color($name, base);
+      }
+    }
+  }
 }

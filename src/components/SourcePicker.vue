@@ -1,5 +1,5 @@
 <template>
-  <div class="source-picker">
+  <div class="source-picker has-my-3">
     <div class="source-input-container" v-if="tempToTest.sourceInput == 'url'">
       <label for="pageUrl">Website URL</label>
       <input type="url" name="pageUrl" id="pageUrl" v-model="tempToTest.url" placeholder="https://www.mywebsite.com">
@@ -8,11 +8,21 @@
       <label for="imageFile">Select an image</label>
       <input type="file" name="imageFile" id="imageFile" accept="image/png, image/jpeg" v-on:change="onFileChange">
     </div>
-    <div>
-      <label><input name="source" id="sourceInputUrl" type="radio" value="url" v-model="tempToTest.sourceInput "> URL</label>
-      <label><input name="source" id="sourceInputImg" type="radio" value="img" v-model="tempToTest.sourceInput "> Image</label>
-    </div>
-    <button v-if="tempToTest.url || tempToTest.image" v-on:click="emitValuesToTest">Start tests</button>
+    <ul class="list-inline">
+      <li>
+        <label class="input-label">
+          <input name="source" id="sourceInputUrl" type="radio" value="url" v-model="tempToTest.sourceInput "> 
+          URL
+        </label>
+      </li>
+      <li>
+        <label class="input-label">
+          <input name="source" id="sourceInputImg" type="radio" value="img" v-model="tempToTest.sourceInput "> 
+          Image
+        </label>
+      </li>
+    </ul>
+    <button v-if="tempToTest.url || tempToTest.image" v-on:click="emitValuesToTest" class="btn is-light has-mt-3">Start tests</button>
   </div>
 </template>
 

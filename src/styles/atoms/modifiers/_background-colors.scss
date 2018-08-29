@@ -1,0 +1,6 @@
+@each $name, $theme in $colors {
+  .has-bg-#{$name} {
+    background-color: color($name, base);
+    color: color($name, contrast);
+  }
+}

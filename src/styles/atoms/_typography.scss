@@ -1,3 +1,25 @@
+html {
+  font-size: 20px;
+}
+
 body {
-  font-family: monospace,monospace;
+  font-family: font-family(paragraph);
+  color: color(dark);
+}
+
+.list-inline{
+  li{
+    margin-right: spacer(3);
+    display: inline-block;
+
+    @include last(1){
+      margin-right: 0;
+    }
+  }
+}
+
+.list-unstyle, .list-inline{
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

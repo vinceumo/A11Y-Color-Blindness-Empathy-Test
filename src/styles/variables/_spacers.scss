@@ -1,0 +1,18 @@
+$spacer-reference: 1rem;
+
+$spacers: (
+  0: 0,
+  1: ($spacer-reference * 0.25),
+  2: ($spacer-reference * 0.5),
+  3: $spacer-reference,
+  4: ($spacer-reference * 1.25),
+  5: ($spacer-reference * 1.5),
+  6: ($spacer-reference * 3),
+  7: ($spacer-reference * 6),
+  8: ($spacer-reference * 9),
+  9: ($spacer-reference * 12)
+);
+
+@function spacer($spacer) {
+  @return map-get($spacers, $spacer);
+}

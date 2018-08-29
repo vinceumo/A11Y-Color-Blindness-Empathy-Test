@@ -1,2 +1,22 @@
-$primary: tomato;
-$secondary: yellowgreen;
+$colors: (
+  dark: (
+    base: hsl(0, 0%, 13%),
+    contrast: hsl(0, 0%, 95%)
+  ),
+  light: (
+    base: hsl(0, 0%, 95%),
+    contrast: hsl(0, 0%, 13%)
+  )
+);
+
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+@function color($color-name, $color-variant:null) {
+  @if ($color-variant != null) {
+    @return map-get(map-get($colors,$color-name),$color-variant);
+  } @else {
+    @return map-get(map-get($colors,$color-name), base);
+  }
+}

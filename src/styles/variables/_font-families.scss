@@ -1,0 +1,9 @@
+$font-families: (
+  paragraph: ("Asap", "Helvetica Neue", Arial, sans-serif),
+  title: ("Asap", "Helvetica Neue", Arial, sans-serif),
+  highlight: ("Asap", "Helvetica Neue", Arial, sans-serif),
+);
+
+@function font-family($font-family) {
+  @return map-get($font-families, $font-family);
+}

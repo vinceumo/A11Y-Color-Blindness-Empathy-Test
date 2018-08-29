@@ -1,0 +1,11 @@
+$breakpoints: (
+  xs: 320px, // Smartphone
+  sm: 600px, // Tablets
+  md: 900px, // Tablets Landscape and small desktops
+  lg: 1200px, // Desktops
+  xl: 1800px, // Large Desktop
+);
+
+@function bp($bp) {
+  @return em(map-get($breakpoints, $bp));
+}

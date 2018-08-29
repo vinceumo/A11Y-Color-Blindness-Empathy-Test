@@ -1,7 +1,7 @@
 <template>
   <div class="test-output">
     <div class="iframe-container" v-if="outputToTest.sourceInput == 'url'">
-        <iframe v-bind:src="outputToTest.url" frameborder="0" onload="console.log('Load');" onerror="console.log('error');"></iframe>
+        <iframe v-bind:src="outputToTest.url" frameborder="0" onload="console.log(this.contentDocument)"></iframe>
     </div>
     <img v-if="outputToTest.sourceInput == 'img'" v-bind:src="outputToTest.image">
   </div>

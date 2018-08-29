@@ -1,0 +1,15 @@
+label {
+  font-weight: bold;
+  margin-bottom: 0;
+  cursor: pointer;
+  display: block;
+
+  &.input-label {
+      font-weight: normal;
+      
+      input[type="radio"],
+      input[type="checkbox"] {
+          margin-right: spacer(1);
+      }
+  }
+}

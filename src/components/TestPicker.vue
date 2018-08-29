@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <label><input name="tests" type="radio" v-bind:value="tests.name" v-on:change="emitTestPickerValue"> {{tests.name}}</label>
-  </div>
+  <li>
+    <label class="input-label"><input name="tests" type="radio" v-bind:value="tests.name" v-on:change="emitTestPickerValue"> {{tests.name}}</label>
+  </li>
 </template>
 
 <script>
