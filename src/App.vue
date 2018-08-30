@@ -74,11 +74,11 @@ export default {
 <style lang="scss" scoped>
   .test-pickers {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 
-  // @include min(bp(sm)){
-  //   grid-template-columns: 1fr 1fr;
-  // }
+  @include min(#{bp(sm)}){
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>
 
