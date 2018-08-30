@@ -28,3 +28,18 @@ body {
 h1, h2 {
   line-height: 1;
 }
+
+.has-text-center,
+.has-text-center *{
+  text-align: center;
+}
+
+.has-text-left,
+.has-text-left *{
+  text-align: left;
+}
+
+.has-text-right,
+.has-text-right *{
+  text-align: right;
+}
