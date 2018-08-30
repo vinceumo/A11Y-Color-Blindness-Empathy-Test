@@ -5,6 +5,7 @@
 @import "functions/em";
 @import "functions/map-deep-get";
 
+@import "mixins/focus-style";
 @import "mixins/media-queries";
 
 @import "variables/breakpoints";
@@ -14,6 +15,7 @@
 
 
 @import "atoms/buttons";
+@import "atoms/focus";
 @import "atoms/form-elements";
 @import "atoms/typography";
 

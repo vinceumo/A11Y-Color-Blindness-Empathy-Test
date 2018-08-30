@@ -21,13 +21,13 @@ export default {
   padding: 1rem;
 
   .iframe-container {
-    height: calc(100vh - 2rem);
-    width: calc(100% - 2rem);
+    height: calc(100vh - 5rem);
+    width: 100%;
 
     iframe {
       height: 100%;
       width: 100%;
-      margin-top: -1.5rem;
+      background-color: #ffffff;
     }
   }
 
