@@ -1,13 +1,17 @@
 <template>
   <li>
-    <label class="input-label"><input name="tests" type="radio" v-bind:value="tests.name" v-on:change="emitTestPickerValue"> {{tests.name}}</label>
+    <label class="input-label"><input v-bind:name="testName" type="radio" v-bind:value="tests.class" v-on:change="emitTestPickerValue"> {{tests.name}}</label>
   </li>
 </template>
 
 <script>
 export default {
   name: "TestPicker",
-  props: ["tests", "value"],
+  props: {
+    testName: String,
+    tests: Object,
+    value: String
+  },
   methods: {
     emitTestPickerValue(event) {
       const value = event.target.value;

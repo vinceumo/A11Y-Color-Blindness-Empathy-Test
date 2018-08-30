@@ -21,3 +21,15 @@ $type-map: (
 .grayscale{
   filter: grayscale(100%);
 }
+
+.vision-loss-moderate {
+  filter: blur(1px);
+}
+
+.vision-loss-severe {
+  filter: blur(10px);
+}
+
+.vision-blindness {
+  filter: brightness(0);
+}

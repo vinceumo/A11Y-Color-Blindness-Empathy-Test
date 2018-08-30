@@ -9,17 +9,38 @@
   <main class="has-py-5">
     <div class="container">
       <SourcePicker v-on:emitValuesToTestEvent="getValuesToTest"/>
+      <h2 v-if="showTest">Color blindness tests:</h2>
       <ul v-if="showTest" class="list-unstyle test-pickers has-p-3 has-mb-3">
-        <TestPicker v-for="(item, index) in tests" v-bind:key="item.name + index" v-bind:tests="{name: item.name}" v-on:change="getTestPickerValue"/>
+        <TestPicker v-for="(item, index) in colorBlindessTests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, class: item.class}" v-bind:testName="'colorBlindness'" v-on:change="getColorBlindTestPickerValue"/>
+      </ul>
+      <h2 v-if="showTest">Vision loss tests:</h2>
+      <ul v-if="showTest" class="list-unstyle test-pickers has-p-3 has-mb-3">
+        <TestPicker v-for="(item, index) in lowVisionTests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, class: item.class}"  v-bind:testName="'visionLoss'" v-on:change="getLowVisionPickerValue"/>
       </ul>
     </div>
-    <TestOutput v-if="showTest" v-bind:outputToTest="toTest" v-bind:class="currentTest"/>
+    <div v-bind:class="currentLowVisionTest">
+      <TestOutput v-if="showTest" v-bind:outputToTest="toTest" v-bind:class="currentColorBlindTest"/>
+    </div>
   </main>
   <footer class="has-py-5 has-bg-dark">
     <div class="container">
       <div v-if="showTest && toTest.sourceInput == 'url'">
         <h2>Why is my site showing as a blank white box?</h2>
-        <p>Some websites do not allow to be embedded in other websites. There is no work around. Alternatively, you can provide a screenshot of the website you wish to test or use the browser plugin.</p>
+        <p>Some websites do not allow to be embedded in other websites. There is no workaround. Alternatively, you can provide a screenshot of the website you wish to test or use the browser plugin.</p>
+        <hr>
+      </div>
+      <div>
+        <h2>Why this app?</h2>
+        <p><i>A11Y - Color blindness empathy test</i> was build to help designers and developers to understand color blindness and visual imparity.</p>
+        <p>This website is base on <a href="https://lukyvj.github.io/accecss/">AcceCSS</a> Sass mixin by <a href="https://twitter.com/LukyVj">LukyVj</a>. This mixin allows this app to emulate 8 types of color blindness, plus grayscale to check the contrast of your website.</p>
+        <p>If you want to learn about color blindness, here are few resources:</p>
+        <ul>
+          <li><a href="https://www.nhs.uk/conditions/Colour-vision-deficiency/">Colour vision deficiency (colour blindness) - NHS</a></li>
+          <li><a href="https://nei.nih.gov/health/color_blindness/facts_about">Facts About Color Blindness - NIH</a></li>
+          <li><a href="https://99designs.co.uk/blog/tips/designers-need-to-understand-color-blindness/">Why all designers need to understand color blindness  - 99designs</a></li>
+          <li><a href="https://medium.com/intrepid-s-insights/designing-for-and-with-color-blindness-48392aab3d87">Designing For (and With) Color Blindness - Aaron Tenbuuren</a></li>
+          <li><a href="https://uxcellence.com/2018/accessible-color-contrast">Designing for Accessibility: Color & Contrast - UXcellence</a></li>
+        </ul>
         <hr>
       </div>
       <ul class="list-unstyle plugins">
@@ -46,25 +67,35 @@ export default {
   },
   data: function() {
     return {
-      currentTest: "",
+      currentColorBlindTest: "",
+      currentLowVisionTest: "",
       toTest: {},
-      tests: [
-        { name: "none" },
-        { name: "protanopia" },
-        { name: "protanomaly" },
-        { name: "deuteranopia" },
-        { name: "deuteranomaly" },
-        { name: "tritanopia" },
-        { name: "tritanomaly" },
-        { name: "achromatopsia" },
-        { name: "achromatomaly" },
-        { name: "grayscale" }
-      ]
+      colorBlindessTests: [
+        { name: "none", class: "" },
+        { name: "protanopia", class: "protanopia" },
+        { name: "protanomaly", class: "protanomaly" },
+        { name: "deuteranopia", class: "deuteranopia" },
+        { name: "deuteranomaly", class: "deuteranomaly" },
+        { name: "tritanopia", class: "tritanopia" },
+        { name: "tritanomaly", class: "tritanomaly" },
+        { name: "achromatopsia", class: "achromatopsia" },
+        { name: "achromatomaly", class: "achromatomaly" },
+        { name: "grayscale", class: "grayscale" }
+      ],
+      lowVisionTests: [
+        { name: "none", class: "" },
+        { name: "moderate vision loss", class: "vision-loss-moderate" },
+        { name: "severe vision loss", class: "vision-loss-severe" },
+        { name: "blidness", class: "vision-blindness" }
+      ],
     };
   },
   methods: {
-    getTestPickerValue(value) {
-      this.currentTest = value;
+    getColorBlindTestPickerValue(value) {
+      this.currentColorBlindTest = value;
+    },
+    getLowVisionPickerValue(value) {
+      this.currentLowVisionTest = value;
     },
     getValuesToTest(value) {
       this.toTest = value;
@@ -91,7 +122,6 @@ export default {
     flex: 1 0 auto;
   }
 }
-
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .page-container {
