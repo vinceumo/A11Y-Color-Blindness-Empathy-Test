@@ -1,0 +1,25 @@
+a {
+  color: color(dark);
+  text-decoration: none;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    background-color: color(dark);
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+a[href^="http://"],
+a[href^="https://"]{
+  &:not([href*="example.com"]):after{
+    content: "\01F517";
+    font-size: 0.8rem;
+  }
+}

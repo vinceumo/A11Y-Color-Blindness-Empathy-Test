@@ -6,6 +6,8 @@ button {
 
 .btn {
   padding: 0.5rem 1rem;
+  display: inline-block;
+  text-align: center;
 
   @each $name, $theme in $colors {
     &.is-#{$name} {

@@ -31,6 +31,7 @@ select,
   width: 100%;
   transition: border-color 0.3s ease-in-out;
   margin-bottom: spacer(3);
+  overflow: hidden;
 
   &:hover {
       border-color: lighten(color(dark), 10%);
@@ -39,7 +40,6 @@ select,
   &:focus {
     border-color: color(dark)
     }
-
 
   &::placeholder {
     color: color(dark);

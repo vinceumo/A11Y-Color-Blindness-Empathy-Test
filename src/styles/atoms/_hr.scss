@@ -1,0 +1,13 @@
+hr {
+  margin: spacer(2) 0;
+  border: 0;
+  border-bottom: 2px solid color(dark);
+}
+
+@each $name, $theme in $colors {
+  .has-bg-#{$name} {
+    hr {
+      border-color: color($name, contrast);
+    }
+  }
+}

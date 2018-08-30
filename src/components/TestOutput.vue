@@ -1,7 +1,7 @@
 <template>
   <div class="test-output">
     <div class="iframe-container" v-if="outputToTest.sourceInput == 'url'">
-        <iframe v-bind:src="outputToTest.url" frameborder="0" onload="console.log(this.contentDocument)"></iframe>
+        <iframe v-bind:src="outputToTest.url" frameborder="0"></iframe>
     </div>
     <img v-if="outputToTest.sourceInput == 'img'" v-bind:src="outputToTest.image">
   </div>
@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .test-output {
-  padding: 1rem;
+  padding: 0.5rem;
 
   .iframe-container {
     height: calc(100vh - 5rem);
@@ -27,7 +27,7 @@ export default {
     iframe {
       height: 100%;
       width: 100%;
-      background-color: #ffffff;
+      background-color: hsl(0, 0%, 100%);
     }
   }
 

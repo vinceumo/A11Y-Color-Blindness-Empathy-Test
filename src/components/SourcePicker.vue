@@ -22,7 +22,7 @@
         </label>
       </li>
     </ul>
-    <button v-if="tempToTest.url || tempToTest.image" v-on:click="emitValuesToTest" class="btn is-light has-mt-3">Start tests</button>
+    <button v-if="tempToTest.url || tempToTest.image" v-on:click="emitValuesToTest" class="btn is-light has-mt-3">Start test</button>
   </div>
 </template>
 

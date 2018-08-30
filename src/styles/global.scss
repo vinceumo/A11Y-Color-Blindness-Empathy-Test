@@ -13,14 +13,15 @@
 @import "variables/font-families";
 @import "variables/spacers";
 
+@import "layout/global";
+@import "layout/container";
 
 @import "atoms/buttons";
 @import "atoms/focus";
 @import "atoms/form-elements";
+@import "atoms/hr";
+@import "atoms/links";
 @import "atoms/typography";
-
-@import "layout/body";
-@import "layout/container";
 
 @import "atoms/modifiers/background-colors";
 @import "atoms/modifiers/spacing";

@@ -5,6 +5,7 @@ html {
 body {
   font-family: font-family(paragraph);
   color: color(dark);
+  line-height: 1.5;
 }
 
 .list-inline{
@@ -22,4 +23,8 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+h1, h2 {
+  line-height: 1;
 }
