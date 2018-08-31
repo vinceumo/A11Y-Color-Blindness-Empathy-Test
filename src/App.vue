@@ -8,14 +8,14 @@
   </header>
   <main class="has-py-5">
     <div class="container">
-      <SourcePicker v-on:emitValuesToTestEvent="getValuesToTest"/>
+      <SourcePicker v-on:onValuesToTestClick="getValuesToTest"/>
       <h2 v-if="showTest">Color blindness tests:</h2>
       <ul v-if="showTest" class="list-unstyle test-pickers has-p-3 has-mb-3">
-        <TestPicker v-for="(item, index) in colorBlindessTests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, class: item.class}" v-bind:testName="'colorBlindness'" v-on:change="getColorBlindTestPickerValue"/>
+        <TestPicker v-for="(item, index) in colorBlindessTests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, class: item.class}" v-bind:testName="'colorBlindness'" v-on:onTestValueChange="getColorBlindTestPickerValue"/>
       </ul>
       <h2 v-if="showTest">Vision loss tests:</h2>
       <ul v-if="showTest" class="list-unstyle test-pickers has-p-3 has-mb-3">
-        <TestPicker v-for="(item, index) in lowVisionTests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, class: item.class}"  v-bind:testName="'visionLoss'" v-on:change="getLowVisionPickerValue"/>
+        <TestPicker v-for="(item, index) in lowVisionTests" v-bind:key="item.name + index" v-bind:tests="{name: item.name, class: item.class}"  v-bind:testName="'visionLoss'" v-on:onTestValueChange="getLowVisionPickerValue"/>
       </ul>
     </div>
     <div v-bind:class="currentLowVisionTest">

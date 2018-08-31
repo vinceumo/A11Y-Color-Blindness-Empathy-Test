@@ -15,7 +15,7 @@ export default {
   methods: {
     emitTestPickerValue(event) {
       const value = event.target.value;
-      this.$emit("change", value);
+      this.$emit("onTestValueChange", value);
     }
   }
 };

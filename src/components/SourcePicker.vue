@@ -54,7 +54,7 @@ export default {
     },
     emitValuesToTest() {
       const value = this.tempToTest;
-      this.$emit("emitValuesToTestEvent", value);
+      this.$emit("onValuesToTestClick", value);
     }
   }
 };
