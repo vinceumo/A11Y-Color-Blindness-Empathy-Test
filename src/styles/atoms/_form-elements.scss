@@ -34,14 +34,14 @@ select,
   overflow: hidden;
 
   &:hover {
-      border-color: lighten(color(dark), 10%);
+    border-color: lighten(color(dark), 10%);
   }
 
   &:focus {
-    border-color: color(dark)
-    }
+    border-color: color(dark);
+  }
 
   &::placeholder {
-    color: color(dark);
+    color: lighten(color(dark), 30%);
   }
 }
