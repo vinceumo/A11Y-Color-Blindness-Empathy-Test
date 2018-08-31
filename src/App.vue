@@ -2,8 +2,7 @@
 <div class="page-container">
   <header class="has-bg-dark has-py-5">
     <div class="container">
-      <h1>A11Y<br>
-      Color blindness empathy test</h1>
+      <h1>A11Y<br>Color blindness empathy test</h1>
     </div>
   </header>
   <main class="has-py-5">
@@ -26,10 +25,10 @@
     <div class="container">
       <div v-if="showTest && toTest.sourceInput == 'url'">
         <h2>Why is my site showing as a blank white box?</h2>
-        <p>Some websites do not allow to be embedded in other websites. There is no workaround. Alternatively, you can provide a screenshot of the website you wish to test or use the browser plugin.</p>
+        <p>Some websites do not allow to be embedded in other websites. There is no workaround. Alternatively, you can provide a screenshot of the website you wish to test<!-- or use the browser plugin-->.</p>
         <hr>
       </div>
-      <h2>Why this app?</h2>
+      <h2>Why this website?</h2>
       <p><i>A11Y - Color blindness empathy test</i> was build to help designers and developers to understand color blindness and visual imparity.</p>
       <p>This website is base on <a href="https://lukyvj.github.io/accecss/">AcceCSS</a> Sass mixin by <a href="https://twitter.com/LukyVj">LukyVj</a>. This mixin allows this app to emulate 8 types of color blindness, plus grayscale to check the contrast of your website.</p>
       <p>If you want to learn about color blindness, here are few resources:</p>
