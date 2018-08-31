@@ -5,6 +5,9 @@ module.exports = {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))
   },
+  baseUrl: process.env.NODE_ENV === 'production'
+      ? '/A11Y-Color-Blindness-Empathy-Test/'
+      : '/',
   pwa: {
     name: 'A11Y Color Blindness Empathy Test',
     themeColor: '#212121',
