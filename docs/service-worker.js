@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
 
 importScripts(
-  "/A11Y-Color-Blindness-Empathy-Test/precache-manifest.67c29adbaf34cacbc3b9f39d170c757b.js"
+  "/A11Y-Color-Blindness-Empathy-Test/precache-manifest.f3fe42660b6046cffe59e95fe45372a0.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "a11y-color-blindness-empathy-test"});

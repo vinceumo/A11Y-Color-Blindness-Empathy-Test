@@ -60,7 +60,7 @@ export default {
         { name: "none", class: "" },
         { name: "moderate vision loss", class: "vision-loss-moderate" },
         { name: "severe vision loss", class: "vision-loss-severe" },
-        { name: "blidness", class: "vision-blindness" }
+        { name: "blindness", class: "vision-blindness" }
       ],
     };
   },
