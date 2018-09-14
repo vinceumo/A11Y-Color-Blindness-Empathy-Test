@@ -39,3 +39,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.plugins {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .btn {
+    margin: 0.5rem;
+  }
+}
+</style>

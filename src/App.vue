@@ -118,15 +118,5 @@ export default {
     grid-template-columns: 1fr 1fr;
   }
 }
-
-.plugins {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  .btn {
-    margin: 0.5rem;
-  }
-}
 </style>
 
