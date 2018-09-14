@@ -3,7 +3,7 @@
     <div class="container">
       <div v-if="isTestShown && sourceInput == 'url'">
         <h2>Why is my site showing as a blank white box?</h2>
-        <p>Some websites do not allow to be embedded in other websites. There is no workaround. Alternatively, you can provide a screenshot of the website you wish to test<!-- or use the browser plugin-->.</p>
+        <p>Some websites do not allow to be embedded in other websites. There is no workaround. Alternatively, you can provide a screenshot of the website you wish to testor use the browser extension.</p>
         <hr>
       </div>
       <h2>Why this website?</h2>
@@ -18,11 +18,10 @@
         <li><a href="https://uxcellence.com/2018/accessible-color-contrast">Designing for Accessibility: Color & Contrast - UXcellence</a></li>
       </ul>
       <hr>
-      <!-- <ul class="list-unstyle plugins">
-        <li><a href="#" class="btn is-dark">Chrome plugin</a></li>
-        <li><a href="#" class="btn is-dark">Firefox plugin</a></li>
-        <li><a href="#" class="btn is-dark">Edge plugin</a></li>
-      </ul> -->
+      <ul class="list-unstyle plugins">
+        <li><a href="https://chrome.google.com/webstore/detail/a11y-color-blindness-empa/idphhflanmeibmjgaciaadkmjebljhcc" class="btn is-dark">Chrome extension</a></li>
+        <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/a11y-color-blindness-test/" class="btn is-dark">Firefox extension</a></li>
+      </ul>
       <ul class="list-inline has-text-center has-my-4">
         <li><a href="https://github.com/vinceumo/a11y-empathy-test">Code</a></li>
         <li><a href="http://www.vincent-humeau.com/">Made by Vincent Humeau</a></li>

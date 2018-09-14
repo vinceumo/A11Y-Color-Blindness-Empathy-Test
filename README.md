@@ -4,6 +4,9 @@ Empathy test for color blindness and visual impairment
 
 https://vinceumo.github.io/A11Y-Color-Blindness-Empathy-Test/
 
+- [Chrome extension](https://chrome.google.com/webstore/detail/a11y-color-blindness-empa/idphhflanmeibmjgaciaadkmjebljhcc)
+- [Firefox extension](https://addons.mozilla.org/en-GB/firefox/addon/a11y-color-blindness-test/) 
+
 ![Screenshot of A11Y Color Blindness Empathy Test](https://image.ibb.co/fBeBze/Screenshot_2018_08_31_A11_Y_Color_blindness_empathy_test.png)
 
 ## Project
