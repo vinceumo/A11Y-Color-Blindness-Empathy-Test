@@ -8,11 +8,11 @@ self.__precacheManifest = [
     "url": "/A11Y-Color-Blindness-Empathy-Test/js/chunk-vendors.348ad41a.js"
   },
   {
-    "revision": "a51e23255cd19ef52d1b",
-    "url": "/A11Y-Color-Blindness-Empathy-Test/js/app.cbcc0f34.js"
+    "revision": "1b9c178c5af6f8b26331",
+    "url": "/A11Y-Color-Blindness-Empathy-Test/js/app.a284acf4.js"
   },
   {
-    "revision": "43428517d3890a7abc33a70d7b9721bc",
+    "revision": "8359c2e7c716a8521697142d515f9148",
     "url": "/A11Y-Color-Blindness-Empathy-Test/index.html"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/A11Y-Color-Blindness-Empathy-Test/img/accecss-filters.e32eb7f4.svg"
   },
   {
-    "revision": "a51e23255cd19ef52d1b",
-    "url": "/A11Y-Color-Blindness-Empathy-Test/css/app.48c0c717.css"
+    "revision": "1b9c178c5af6f8b26331",
+    "url": "/A11Y-Color-Blindness-Empathy-Test/css/app.c3a0be47.css"
   },
   {
     "revision": "5187bcbb1008e632463e4d176fd66ecf",

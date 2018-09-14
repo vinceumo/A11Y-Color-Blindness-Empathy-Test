@@ -3,7 +3,7 @@
     <div class="container">
       <div v-if="isTestShown && sourceInput == 'url'">
         <h2>Why is my site showing as a blank white box?</h2>
-        <p>Some websites do not allow to be embedded in other websites. There is no workaround. Alternatively, you can provide a screenshot of the website you wish to testor use the browser extension.</p>
+        <p>Some websites do not allow to be embedded in other websites. There is no workaround. Alternatively, you can provide a screenshot of the website you wish to test or use the browser extension.</p>
         <hr>
       </div>
       <h2>Why this website?</h2>
